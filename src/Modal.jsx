@@ -12,7 +12,7 @@ const Modal = props => {
         {props.fields.map((field, idx) => (
           <FormFields {...field} key={`key-${idx}`} />
         ))}
-        <button>Send request</button>
+        <button>Send</button>
       </ModalContainer>
     </ModalOverlay>
   );
