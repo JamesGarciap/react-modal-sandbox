@@ -7,7 +7,8 @@
       "label": "Full name *",
       "required": true,
       "icon": "user-icon",
-      "type": "input",
+      "type": "text",
+      "tag": "input",
       "error": "Your name is required"
     },
     {
@@ -16,27 +17,30 @@
       "required": true,
       "icon": "main-icon",
       "validation": "//",
-      "type": "input",
+      "type": "email",
+      "tag": "input",
       "error": "Your email is required"
     },
     {
       "field": "arrival-date",
       "label": "Arrival Date",
       "icon": "calendar-icon",
-      "type": "date"
+      "type": "date",
+      "tag": "input"
     },
     {
       "field": "departure-date",
       "label": "Departure Date",
       "icon": "calendar-icon",
-      "type": "date"
+      "type": "date",
+      "tag": "input"
     },
     {
       "field": "description",
       "label": "Description *",
       "required": true,
       "icon": "text-icon",
-      "type": "textarea",
+      "tag": "textarea",
       "error": "Please provide a description"
     }
   ]

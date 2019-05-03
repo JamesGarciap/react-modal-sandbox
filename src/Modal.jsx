@@ -6,6 +6,7 @@ import FormFields from "./FormFields";
 const Modal = props => {
   const [fields, setFields] = useState(props.fields);
   const [error, setError] = useState({ show: false });
+  const [success, setSuccess] = useState({ show: false });
   const handleChange = newInput => {
     let updatedFields = fields;
 
@@ -31,6 +32,10 @@ const Modal = props => {
 
   const handleSubmit = () => {
     validateFields();
+
+    if (error.show) {
+      setSuccess({ show: true });
+    }
   };
 
   return (
@@ -39,6 +44,11 @@ const Modal = props => {
         <ModalContent>
           <Styled.Heading>{props.title}</Styled.Heading>
           <hr />
+          {success.show && (
+            <Styled.SuccessMessage>
+              Your information was sent successfully!
+            </Styled.SuccessMessage>
+          )}
           <Styled.Paragraph>{props.description}</Styled.Paragraph>
           <Styled.LeftContainer>
             {fields.map((field, idx) => (
@@ -76,10 +86,14 @@ const ModalContainer = styled.div`
   color: #333;
   background: #fff;
   max-width: 600px;
-  width: 80%;
+  width: 100%;
   padding: 15px;
   min-height: 60vh;
   margin: auto;
+
+  @media screen and (min-width: 641px) {
+    float: right;
+  }
 `;
 
 const ModalContent = styled.div`

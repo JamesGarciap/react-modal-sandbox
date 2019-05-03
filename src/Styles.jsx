@@ -69,3 +69,11 @@ export const Error = styled.span`
   font-size: 12px;
   margin-top: 5px;
 `;
+
+export const SuccessMessage = styled.h3`
+  color: #fff;
+  border: 2px solid green;
+  background: #7fb77f;
+  padding: 15px 10px;
+  font-size: 14px;
+`;

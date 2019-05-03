@@ -11,14 +11,15 @@ const FormFields = props => {
   return (
     <FieldContainer>
       <Styled.Label>{props.label}</Styled.Label>
-      {props.type === "input" && (
-        <Styled.Input error={props.showError} type="text" onChange={onChange} />
+      {props.tag === "input" && (
+        <Styled.Input
+          error={props.showError}
+          type={props.type}
+          onChange={onChange}
+        />
       )}
-      {props.type === "textarea" && (
+      {props.tag === "textarea" && (
         <Styled.Textarea error={props.showError} onChange={onChange} />
-      )}
-      {props.type === "date" && (
-        <Styled.Input type="date" onChange={onChange} />
       )}
       {props.showError && <Styled.Error>{props.error}</Styled.Error>}
     </FieldContainer>
