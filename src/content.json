@@ -4,7 +4,7 @@
   "fields": [
     {
       "field": "name",
-      "label": "Full name",
+      "label": "Full name *",
       "required": true,
       "icon": "user-icon",
       "type": "input",
@@ -12,7 +12,7 @@
     },
     {
       "field": "email",
-      "label": "Email",
+      "label": "Email *",
       "required": true,
       "icon": "main-icon",
       "validation": "//",
@@ -33,7 +33,7 @@
     },
     {
       "field": "description",
-      "label": "Description",
+      "label": "Description *",
       "required": true,
       "icon": "text-icon",
       "type": "textarea",

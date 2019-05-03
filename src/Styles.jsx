@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Paragraph = styled.p`
   margin: 20px auto;
@@ -23,12 +23,27 @@ export const Input = styled.input`
   border: 1px solid #ccc;
   height: 32px;
   width: 100%;
+  padding: 16px 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #333;
+
+  ${props =>
+    props.error &&
+    css`
+      border-color: red;
+    `}
 `;
 
 export const Textarea = styled.textarea`
-  border: 1px solid #ccc;
+  border: 1px solid;
+  border-color: ${props => (props.error ? "red" : "#ccc")};
   width: 100%;
   min-height: 120px;
+  padding: 16px 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #333;
 `;
 
 export const Button = styled.button`
@@ -46,4 +61,11 @@ export const Button = styled.button`
   &:hover {
     background: #46b8da;
   }
+`;
+
+export const Error = styled.span`
+  color: red;
+  display: block;
+  font-size: 12px;
+  margin-top: 5px;
 `;

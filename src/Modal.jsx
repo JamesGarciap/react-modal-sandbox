@@ -1,9 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import * as Styled from "./Styles";
 import FormFields from "./FormFields";
 
 const Modal = props => {
+  const [fields, setFields] = useState(props.fields);
+  const [error, setError] = useState({ show: false });
+  const handleChange = newInput => {
+    let updatedFields = fields;
+
+    updatedFields[newInput.idx].value = newInput.value;
+    setFields(updatedFields);
+  };
+
+  const validateFields = () => {
+    const updatedFields = fields.map(e => {
+      if (e.required) {
+        if ((e.value && e.value === "") || !e.value) {
+          e.showError = true;
+          setError({ show: true });
+        } else {
+          e.showError = false;
+          setError({ show: false });
+        }
+      }
+      return e;
+    });
+    setFields(updatedFields);
+  };
+
+  const handleSubmit = () => {
+    validateFields();
+  };
+
   return (
     <ModalOverlay>
       <ModalContainer>
@@ -12,11 +41,19 @@ const Modal = props => {
           <hr />
           <Styled.Paragraph>{props.description}</Styled.Paragraph>
           <Styled.LeftContainer>
-            {props.fields.map((field, idx) => (
-              <FormFields {...field} key={`key-${idx}`} />
+            {fields.map((field, idx) => (
+              <FormFields
+                handleChange={handleChange}
+                {...field}
+                position={idx}
+                key={`key-${idx}`}
+              />
             ))}
           </Styled.LeftContainer>
-          <Styled.Button>Send</Styled.Button>
+          <Styled.Button onClick={handleSubmit}>Send</Styled.Button>
+          {error.show && (
+            <Styled.Error>Please provide the required information</Styled.Error>
+          )}
         </ModalContent>
       </ModalContainer>
     </ModalOverlay>
