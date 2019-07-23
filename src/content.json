@@ -1,15 +1,24 @@
 {
-  "title": "Request Booking",
-  "description": "Please leave your details below and the property manager will get in touch with you as soon as possible to confirm your request.",
+  "title": "Inquire about this property",
+  "description": "Fill in your details to connect with a Villa Specialist  ",
   "fields": [
     {
       "field": "name",
-      "label": "Full name *",
+      "label": "First name *",
       "required": true,
       "icon": "user-icon",
       "type": "text",
       "tag": "input",
       "error": "Your name is required"
+    },
+    {
+      "field": "name",
+      "label": "Last name *",
+      "required": true,
+      "icon": "user-icon",
+      "type": "text",
+      "tag": "input",
+      "error": "Your lastname is required"
     },
     {
       "field": "email",
@@ -20,6 +29,14 @@
       "type": "email",
       "tag": "input",
       "error": "Your email is required"
+    },
+    {
+      "field": "name",
+      "label": "Phone number",
+      "required": false,
+      "icon": "user-icon",
+      "type": "number",
+      "tag": "input"
     },
     {
       "field": "arrival-date",
@@ -36,12 +53,24 @@
       "tag": "input"
     },
     {
+      "field": "flexible-dates",
+      "description": "My travel dates are flexible",
+      "type": "checkbox",
+      "tag": "input"
+    },
+    {
       "field": "description",
-      "label": "Description *",
-      "required": true,
+      "label": "Additional comments",
+      "required": false,
       "icon": "text-icon",
       "tag": "textarea",
-      "error": "Please provide a description"
+      "error": "Please provide more informaition"
+    },
+    {
+      "field": "terms",
+      "description": "I’d like to receive marketing and policy communications from Luxury Retreats and its partners.My travel dates are flexible",
+      "type": "checkbox",
+      "tag": "input"
     }
   ]
 }

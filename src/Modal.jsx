@@ -60,7 +60,7 @@ const Modal = props => {
               />
             ))}
           </Styled.LeftContainer>
-          <Styled.Button onClick={handleSubmit}>Send</Styled.Button>
+          <Styled.Button onClick={handleSubmit}>Submit Request</Styled.Button>
           {error.show && (
             <Styled.Error>Please provide the required information</Styled.Error>
           )}

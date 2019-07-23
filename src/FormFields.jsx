@@ -18,6 +18,7 @@ const FormFields = props => {
           onChange={onChange}
         />
       )}
+      {props.description && <Styled.Label>{props.description}</Styled.Label>}
       {props.tag === "textarea" && (
         <Styled.Textarea error={props.showError} onChange={onChange} />
       )}
