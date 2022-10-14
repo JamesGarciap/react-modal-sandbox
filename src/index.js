@@ -4,7 +4,7 @@ import Modal from "./Modal";
 import modalContent from "./content.json";
 
 import "./styles.css";
-
+console.log('test github editor')
 function App() {
   return (
     <div className="App">
